@@ -1,17 +1,26 @@
 <div class="card mb-3">
-  <img [src]="imageUrl" class="card-img-top" [alt]="description" />
+  <img
+    [src]="faceSnaps.imageUrl"
+    class="card-img-top"
+    [alt]="faceSnaps.description"
+  />
   <div class="card-body">
-    <span class="d-block card-title"> {{ title }}</span>
+    <span class="d-block card-title"> {{ faceSnaps.title }}</span>
 
     <div class="card-text">
-      <span class="d-block"> {{ description }}</span>
-      <span class="d-block"> {{ createdAt | date }}</span>
+      <span class="d-block"> Titre : {{ faceSnaps.description }}</span>
+      <span class="d-block"
+        >En ligne depuis: {{ faceSnaps.createdAt | date }}</span
+      >
+      <span class="d-block" *ngIf="faceSnaps.location">
+        Photo prise : {{ faceSnaps.location }}
+      </span>
       <span class="d-block">
         <button (click)="onAddSpan()" class="btn btn-outline-success">
-         {{btnName}}
+          {{ btnName }}
           <i class="bi bi-person-heart text-danger me-1"></i>
         </button>
-        {{ snaps }}
+        {{ faceSnaps.snaps }}
       </span>
     </div>
   </div>

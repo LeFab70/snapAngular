@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FaceSnaps } from '../models/FaceSnap';
+//import { FaceSnaps } from '../models/FaceSnap';
 
 @Component({
   selector: 'app-face-snap',
@@ -6,26 +8,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./face-snap.component.css'],
 })
 export class FaceSnapComponent implements OnInit {
-  title!: string;
-  description!: string;
-  createdAt!: Date;
-  snaps!: number;
-  imageUrl!: string;
-  isLike: boolean = false;
-  btnName: string = 'Oh Snap!';
+  @Input() faceSnaps!: FaceSnaps;  //props de react JS
+  // title!: string;
+  // description!: string;
+  // createdAt!: Date;
+  // snaps!: number;
+  // imageUrl!: string;
+  //faceSnaps!: FaceSnaps; // = {
+  //   title: 'Neon',
+  //   description: 'mon meilleur',
+  //   createdAt: new Date(),
+  //   snaps: 6,
+  //   imageUrl: 'https://loremflickr.com/320/240',
+  // };
+
+  isLike!: boolean;
+  btnName!: string;
   ngOnInit(): void {
-    this.title = 'Neon';
-    this.description = 'mon meilleur code';
-    this.createdAt = new Date();
-    this.snaps = 6;
-    this.imageUrl = 'https://loremflickr.com/320/240';
+    this.btnName = 'Oh Snap!';
+    this.isLike = false;
+    //   this.faceSnaps = {
+    //     title: 'Neon',
+    //     description: 'mon meilleur',
+    //     createdAt: new Date(),
+    //     snaps: 6,
+    //     imageUrl: 'https://loremflickr.com/320/240',
+    //   };
+    //   // this.faceSnaps.title = "Neon";
+    //   // this.faceSnaps.description = 'mon meilleur code';
+    //   // this.faceSnaps.createdAt = new Date();
+    //   // this.faceSnaps.snaps = 6;
+    //   // this.faceSnaps.imageUrl = 'https://loremflickr.com/320/240';
   }
 
   onAddSpan() {
     //!this.isLike ? this.snaps++ : this.snaps--;
     !this.isLike
-      ? ((this.btnName = 'Oops, un snap'), this.snaps++)
-      : ((this.btnName = 'Oh Snap'), this.snaps--);
+      ? ((this.btnName = 'Oops, un snap'), this.faceSnaps.snaps++)
+      : ((this.btnName = 'Oh Snap'), this.faceSnaps.snaps--);
     this.isLike = !this.isLike;
   }
 }
