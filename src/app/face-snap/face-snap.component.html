@@ -1,0 +1,18 @@
+<div class="card mb-3">
+  <img [src]="imageUrl" class="card-img-top" [alt]="description" />
+  <div class="card-body">
+    <span class="d-block card-title"> {{ title }}</span>
+
+    <div class="card-text">
+      <span class="d-block"> {{ description }}</span>
+      <span class="d-block"> {{ createdAt | date }}</span>
+      <span class="d-block">
+        <button (click)="onAddSpan()" class="btn btn-outline-success">
+         {{btnName}}
+          <i class="bi bi-person-heart text-danger me-1"></i>
+        </button>
+        {{ snaps }}
+      </span>
+    </div>
+  </div>
+</div>
