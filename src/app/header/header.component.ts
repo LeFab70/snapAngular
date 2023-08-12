@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -6,14 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+ // @Input() interval$!: Observable<number>;
   menuList = [
     {
       id: 0,
       name: 'Home',
       path: '',
       icone: 'bi-house-exclamation',
-     
     },
     { id: 1, name: 'Facesnaps', path: 'facesnaps', icone: 'bi-eyeglasses' },
   ];
+
 }

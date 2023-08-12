@@ -5,7 +5,6 @@ import arrayWords from '../models/Words';
 export class FaceSnapService {
   snaps: Array<FaceSnaps>=[]
 
-
   getAllFaceSnaps(): Array<FaceSnaps> {
     return this.snaps;
   }

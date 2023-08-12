@@ -7,8 +7,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background:#00000020 !important;
 }
 .active {
   color: #2a0202 !important;
   /* text-decoration:underline; */
 }
+
