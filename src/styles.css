@@ -7,10 +7,20 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background:#00000020 !important;
+  background: #ddd !important;
 }
 .active {
   color: #2a0202 !important;
   /* text-decoration:underline; */
 }
 
+.image {
+  border: 10px solid #fff !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+  overflow: hidden !important;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.image:hover {
+  transform: rotate(15deg) scale(1, 1) !important;
+}

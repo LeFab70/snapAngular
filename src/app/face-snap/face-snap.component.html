@@ -1,14 +1,14 @@
 <!-- <div *ngIf="faceSnaps.snaps>0"> -->
 
 <!-- <div *ngIf="faceSnaps.snaps >= 2350 ; else nodata"> -->
-<div class="card  shadow-lg  p-1  bg-body rounded-2 d-flex flex-column mb-2 snaps">
+<div class="card image shadow-lg  p-1  bg-body rounded-2 d-flex flex-column mb-2 snaps">
   <img
     [src]="faceSnaps.imageUrl"
-    class="card-img-top object-fit-cover"
+    class=" card-img-top object-fit-cover"
     [alt]="faceSnaps.description"
   />
   <div
-    class="card-body d-flex justify-content-end align-content-center align-items-center"
+    class="card-body d-flex  justify-content-end align-content-center align-items-center"
   >
     <span class="d-block card-title">
       {{ faceSnaps.title | uppercase }} accordion
