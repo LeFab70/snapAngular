@@ -1,0 +1,12 @@
+<div>
+  <img [src]="imageUrl" [alt]="altText" />
+  <div class="mt-5">
+    <!-- <a class="nav-link text-danger font-monospace" routerLink="facesnaps"
+      >Continuer les SnapFaces</a
+    > -->
+    <button (click)="onNext()" class="btn btn-outline-success">
+      Continuer vers les SnapFaces
+      <i class="bi bi-eye-fill text-danger fs-5 ms-2"></i>
+    </button>
+  </div>
+</div>

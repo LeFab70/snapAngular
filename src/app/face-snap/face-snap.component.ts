@@ -1,3 +1,4 @@
+import { FaceSnapService } from './../services/face-snap.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { FaceSnaps } from '../models/FaceSnap';
 //import { FaceSnaps } from '../models/FaceSnap';
@@ -8,7 +9,7 @@ import { FaceSnaps } from '../models/FaceSnap';
   styleUrls: ['./face-snap.component.css'],
 })
 export class FaceSnapComponent implements OnInit {
-  @Input() faceSnaps!: FaceSnaps;  //props de react JS
+  @Input() faceSnaps!: FaceSnaps; //props de react JS
   // title!: string;
   // description!: string;
   // createdAt!: Date;
@@ -24,6 +25,7 @@ export class FaceSnapComponent implements OnInit {
 
   isLike!: boolean;
   btnName!: string;
+  constructor(private faceSnapServices: FaceSnapService) {}
   ngOnInit(): void {
     this.btnName = 'Oh Snap!';
     this.isLike = false;
@@ -44,8 +46,10 @@ export class FaceSnapComponent implements OnInit {
   onAddSpan() {
     //!this.isLike ? this.snaps++ : this.snaps--;
     !this.isLike
-      ? ((this.btnName = 'Oops, un snap'), this.faceSnaps.snaps++)
-      : ((this.btnName = 'Oh Snap'), this.faceSnaps.snaps--);
+      ? ((this.btnName = 'Oops, un snap'),
+        this.faceSnapServices.snapFaceSnapById(this.faceSnaps.id, 'snap'))
+      : ((this.btnName = 'Oh Snap'),
+        this.faceSnapServices.snapFaceSnapById(this.faceSnaps.id, 'unsnap'));
     this.isLike = !this.isLike;
   }
 }

@@ -6,3 +6,19 @@ header {
   font-weight: 900;
   color: rgba(255, 255, 255, 0.83);
 }
+a {
+  margin: 0 10px;
+
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(9, 115, 3, 0.207) !important;
+  transition: ease-in-out;
+  animation-duration: 10ms;
+}
+
+.active {
+  color: #2a0202 !important;
+  /* text-decoration:underline; */
+}

@@ -5,6 +5,7 @@ import { FaceSnaps } from '../models/FaceSnap';
 export class FaceSnapService {
   snaps: Array<FaceSnaps> = [
     {
+      id: 1,
       title: 'Neon',
       description: 'mon meilleur',
       createdAt: new Date(),
@@ -13,6 +14,7 @@ export class FaceSnapService {
       location: 'paris par la France',
     },
     {
+      id: 2,
       title: 'Fab',
       description: 'fabrice kouonang',
       createdAt: new Date(),
@@ -21,6 +23,7 @@ export class FaceSnapService {
     },
 
     {
+      id: 3,
       title: 'Regina',
       description: 'My life ',
       createdAt: new Date(),
@@ -30,6 +33,7 @@ export class FaceSnapService {
     },
 
     {
+      id: 4,
       title: 'Neon',
       description: 'mon meilleur',
       createdAt: new Date(),
@@ -38,6 +42,7 @@ export class FaceSnapService {
       location: 'paris par la France',
     },
     {
+      id: 5,
       title: 'Fab',
       description: 'fabrice kouonang',
       createdAt: new Date(),
@@ -46,6 +51,7 @@ export class FaceSnapService {
     },
 
     {
+      id: 6,
       title: 'Regina',
       description: 'My life ',
       createdAt: new Date(),
@@ -54,6 +60,7 @@ export class FaceSnapService {
       location: 'Montreal par le canada',
     },
     {
+      id: 7,
       title: 'Neon',
       description: 'mon meilleur',
       createdAt: new Date(),
@@ -62,6 +69,7 @@ export class FaceSnapService {
       location: 'paris par la France',
     },
     {
+      id: 8,
       title: 'Fab',
       description: 'fabrice kouonang',
       createdAt: new Date(),
@@ -70,6 +78,7 @@ export class FaceSnapService {
     },
 
     {
+      id: 9,
       title: 'Regina',
       description: 'My life ',
       createdAt: new Date(),
@@ -80,5 +89,15 @@ export class FaceSnapService {
   ];
   getAllFaceSnaps(): Array<FaceSnaps> {
     return this.snaps;
+  }
+  getSnapById(snapId: number): FaceSnaps {
+    const snapFound = this.snaps.find((snap) => snap.id === snapId);
+    if (!snapFound) throw new Error('snap not found!');
+    return snapFound;
+  }
+  snapFaceSnapById(snapId: number, snapType: 'snap' | 'unsnap'): void {
+    //snapFound?snapFound.snaps++ : (throw new Error("snap mot found!"))
+    const facSnap = this.getSnapById(snapId);
+    snapType === 'snap' ? facSnap.snaps++ : facSnap.snaps--;
   }
 }

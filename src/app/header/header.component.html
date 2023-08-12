@@ -1,3 +1,25 @@
 <header>
-  <h1>SnapFace</h1>
+  <h1 class="fw-bolder">SnapFace</h1>
+  <nav
+    class="d-flex justify-content-end align-content-center gap-3"
+    *ngFor="let menu of menuList"
+  >
+    <div>
+      <a
+        [routerLink]="menu.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="fw-bolder nav-link text-success font-monospace text-capitalize"
+        ><i class="bi text-white" [ngClass]="menu.icone"></i> {{ menu.name }}</a
+      >
+    </div>
+    <span class="text-danger-emphasis">|</span>
+    <!-- <div>
+      <a
+        routerLink="facesnaps"
+        class="fw-bolder nav-link text-success font-monospace text-capitalize"
+        ><i class="bi bi-eyeglasses text-white"></i> Facesnaps</a
+      >
+    </div> -->
+  </nav>
 </header>
