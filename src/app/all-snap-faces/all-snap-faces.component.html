@@ -1,11 +1,32 @@
-<app-face-snap *ngIf="snaps.snaps>2"  [faceSnaps]="snaps"></app-face-snap>
+<!-- <app-face-snap *ngIf="snaps.snaps>2"  [faceSnaps]="snaps"></app-face-snap>
 
 <app-face-snap *ngIf="snaps2.snaps>2" [faceSnaps]="snaps2"></app-face-snap>
-<app-face-snap *ngIf="snaps3.snaps>2" [faceSnaps]="snaps3"></app-face-snap>
+<app-face-snap *ngIf="snaps3.snaps>2" [faceSnaps]="snaps3"></app-face-snap> -->
 
+<!-- <div *ngFor="let snap of snaps">
+  <app-face-snap [faceSnaps]="snap"></app-face-snap>
+  <app-face-snap *ngIf="snap.snaps>2" [faceSnaps]="snap"></app-face-snap>
+</div> -->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-12 col-md-3" *ngFor="let snap of snaps"> -->
+<div *ngIf="snaps.length > 0; else nospan">
+  <div class="container">
+    <div class="row">
+      <!-- <div>
+      <input type="text" [(ngModel)]="snapsZise">
+    </div> -->
 
+      <div class="col-12 col-md-4 col-lg-3" *ngFor="let snap of snaps">
+        <div class="card-group">
+          <app-face-snap [faceSnaps]="snap"></app-face-snap>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #nospan>No snaps to display</ng-template>
+<!-- <div class="card-group" *ngFor="let snap of snaps">
+  <app-face-snap [faceSnaps]="snap"></app-face-snap>
 
-<app-face-snap *ngIf="snaps.snaps>2"  [faceSnaps]="snaps"></app-face-snap>
-
-<app-face-snap *ngIf="snaps2.snaps>2" [faceSnaps]="snaps2"></app-face-snap>
-<app-face-snap *ngIf="snaps3.snaps>2" [faceSnaps]="snaps3"></app-face-snap>
+</div> -->

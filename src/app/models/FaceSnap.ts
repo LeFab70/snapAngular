@@ -5,6 +5,7 @@ export class FaceSnaps {
   snaps!: number;
   imageUrl!: string;
   location?: string;
+  
   // constructor(
   //   public title: string,
   //   public description: string,
