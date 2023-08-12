@@ -1,6 +1,7 @@
-import { FaceSnapService } from './../services/face-snap.service';
-import { Component, Input, OnInit } from '@angular/core';
+//import { FaceSnapService } from './../services/face-snap.service';
+import { Component, Input } from '@angular/core';
 import { FaceSnaps } from '../models/FaceSnap';
+import { Router } from '@angular/router';
 //import { FaceSnaps } from '../models/FaceSnap';
 
 @Component({
@@ -8,7 +9,7 @@ import { FaceSnaps } from '../models/FaceSnap';
   templateUrl: './face-snap.component.html',
   styleUrls: ['./face-snap.component.css'],
 })
-export class FaceSnapComponent implements OnInit {
+export class FaceSnapComponent {
   @Input() faceSnaps!: FaceSnaps; //props de react JS
   // title!: string;
   // description!: string;
@@ -23,12 +24,18 @@ export class FaceSnapComponent implements OnInit {
   //   imageUrl: 'https://loremflickr.com/320/240',
   // };
 
-  isLike!: boolean;
-  btnName!: string;
-  constructor(private faceSnapServices: FaceSnapService) {}
+  constructor(private router: Router) {}
+  onDisplaySingleFaceSnap() {
+    this.router.navigateByUrl('facesnaps/' + this.faceSnaps.title);
+   // throw new Error('Method not implemented.');
+  }
+
+  // isLike!: boolean;
+  // btnName!: string;
+  // constructor(private faceSnapServices: FaceSnapService) {}
   ngOnInit(): void {
-    this.btnName = 'Oh Snap!';
-    this.isLike = false;
+    // this.btnName = 'Oh Snap!';
+    // this.isLike = false;
     //   this.faceSnaps = {
     //     title: 'Neon',
     //     description: 'mon meilleur',
@@ -43,13 +50,13 @@ export class FaceSnapComponent implements OnInit {
     //   // this.faceSnaps.imageUrl = 'https://loremflickr.com/320/240';
   }
 
-  onAddSpan() {
-    //!this.isLike ? this.snaps++ : this.snaps--;
-    !this.isLike
-      ? ((this.btnName = 'Oops, un snap'),
-        this.faceSnapServices.snapFaceSnapById(this.faceSnaps.id, 'snap'))
-      : ((this.btnName = 'Oh Snap'),
-        this.faceSnapServices.snapFaceSnapById(this.faceSnaps.id, 'unsnap'));
-    this.isLike = !this.isLike;
-  }
+  // onAddSpan() {
+  //   //!this.isLike ? this.snaps++ : this.snaps--;
+  //   !this.isLike
+  //     ? ((this.btnName = 'Oops, un snap'),
+  //       this.faceSnapServices.snapFaceSnapById(this.faceSnaps.id, 'snap'))
+  //     : ((this.btnName = 'Oh Snap'),
+  //       this.faceSnapServices.snapFaceSnapById(this.faceSnaps.id, 'unsnap'));
+  //   this.isLike = !this.isLike;
+  // }
 }

@@ -7,21 +7,27 @@
     class="card-img-top object-fit-cover"
     [alt]="faceSnaps.description"
   />
-  <div class="card-body">
-    <span class="d-block card-title"> {{ faceSnaps.title | uppercase }}</span>
-
-    <div class="card-text">
+  <div
+    class="card-body d-flex justify-content-end align-content-center align-items-center"
+  >
+    <span class="d-block card-title">
+      {{ faceSnaps.title | uppercase }} accordion
+    </span>
+    <button (click)="onDisplaySingleFaceSnap()" class="d-block btn">
+      <i class="bi bi-eye text-danger fs-3"></i>
+    </button>
+    <!-- <div class="card-text">
       <span class="d-block card-text">
         Titre : {{ faceSnaps.description | titlecase }}</span
-      >
-      <!-- <span class="d-block card-text"
+      > -->
+    <!-- <span class="d-block card-text"
         >En ligne depuis: {{ faceSnaps.createdAt | date }}</span
       > -->
-      <span class="d-block card-text" *ngIf="faceSnaps.location">
+    <!-- <span class="d-block card-text" *ngIf="faceSnaps.location">
         Photo prise : {{ faceSnaps.location }}
-      </span>
+      </span> -->
 
-      <span class="d-block">
+    <!-- <span class="d-block">
         <button (click)="onAddSpan()" class="btn btn-outline-success">
           {{ btnName }}
           <i class="bi bi-person-heart text-danger me-1"></i>
@@ -29,14 +35,14 @@
         <span [ngStyle]="{ color: 'rgb(10, ' + faceSnaps.snaps + ', 80)' }">
           {{ faceSnaps.snaps }}</span
         >
-      </span>
-    </div>
+      </span> -->
+    <!-- </div> -->
   </div>
-  <div class="card-footer">
+  <!-- <div class="card-footer">
     <small class="text-muted"
       >Last updated {{ faceSnaps.createdAt | date : "medium" }} ago</small
     >
-  </div>
+  </div> -->
 </div>
 <!-- </div> -->
 <ng-template #nodata>No snaps to display</ng-template>

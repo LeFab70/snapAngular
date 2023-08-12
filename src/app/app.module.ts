@@ -10,8 +10,9 @@ import * as fr from '@angular/common/locales/fr';
 import { HeaderComponent } from './header/header.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
 @NgModule({
-  declarations: [AppComponent, FaceSnapComponent, AllSnapFacesComponent, HeaderComponent, LandingPageComponent, NotFoundPageComponent],
+  declarations: [AppComponent, FaceSnapComponent, AllSnapFacesComponent, HeaderComponent, LandingPageComponent, NotFoundPageComponent, SingleFaceSnapComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent],
