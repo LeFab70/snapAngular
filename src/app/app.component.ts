@@ -1,7 +1,6 @@
 //
 
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject, interval, take, takeUntil } from 'rxjs';
+import { Component } from '@angular/core';
 // import {
 //   concatMap,
 //   mergeMap,
@@ -18,30 +17,14 @@ import { tap } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit, OnDestroy {
-  destroy$!: Subject<boolean>;
-  interval$!: Observable<number>;
-  // redTrainsCalled = 0;
+export class AppComponent  {
+  // destroy$!: Subject<boolean>;
+  // interval$!: Observable<number>;
+  // // redTrainsCalled = 0;
   // yellowTrainsCalled = 0;
 
-  ngOnInit() {
-    this.destroy$ = new Subject();
-    this.interval$ = interval(1000);
-    this.interval$
-      .pipe(
-        //take(10), //une seule subscribe connue
-        takeUntil(this.destroy$), //jusqua la destruction du composant
-        tap(console.log)
-      )
-      .subscribe();
-  }
-  ngOnDestroy(): void {
-    this.destroy$.next(true); //emission durant tout le cycle de vie du composant
-  }
 
 
-
-  
   //   interval(500)
   //     .pipe(
   //       take(10),
