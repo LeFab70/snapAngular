@@ -7,6 +7,8 @@
   <app-face-snap [faceSnaps]="snap"></app-face-snap>
   <app-face-snap *ngIf="snap.snaps>2" [faceSnaps]="snap"></app-face-snap>
 </div> -->
+<!-- <app-face-snap *ngFor="let snap of snaps" [faceSnaps]="snap"></app-face-snap> -->
+
 <!-- <div class="container">
   <div class="row">
     <div class="col-12 col-md-3" *ngFor="let snap of snaps"> -->
@@ -23,8 +25,8 @@
       <input type="text" [(ngModel)]="snapsZise">
     </div> -->
 
-      <div class="col-12 col-md-4 col-lg-3" *ngFor="let snap of snaps">
-        <div class="card-group">
+      <div class="col" *ngFor="let snap of snaps">
+        <div class="d-flex flex-wrap">
           <app-face-snap [faceSnaps]="snap"></app-face-snap>
         </div>
       </div>

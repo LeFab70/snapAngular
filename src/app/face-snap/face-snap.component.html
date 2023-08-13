@@ -1,33 +1,36 @@
 <!-- <div *ngIf="faceSnaps.snaps>0"> -->
 
 <!-- <div *ngIf="faceSnaps.snaps >= 2350 ; else nodata"> -->
-<div class="card image shadow-lg  p-1  bg-body rounded-2 d-flex flex-column mb-2 snaps">
-  <img
-    [src]="faceSnaps.imageUrl"
-    class=" card-img-top object-fit-cover"
-    [alt]="faceSnaps.description"
-  />
+<div class="flexg">
   <div
-    class="card-body d-flex  justify-content-end align-content-center align-items-center"
+    class="card image shadow-lg p-1 bg-body rounded-2 d-flex flex-column mb-2 snaps"
   >
-    <span class="d-block card-title">
-      {{ faceSnaps.title | uppercase }} accordion
-    </span>
-    <button (click)="onDisplaySingleFaceSnap()" class="d-block btn">
-      <i class="bi bi-eye text-danger fs-3"></i>
-    </button>
-    <!-- <div class="card-text">
+    <img
+      [src]="faceSnaps.imageUrl"
+      class="card-img-top object-fit-cover"
+      [alt]="faceSnaps.description"
+    />
+    <div
+      class="card-body d-flex justify-content-end align-content-center align-items-center"
+    >
+      <span class="d-block card-title">
+        {{ faceSnaps.title | uppercase }} accordion
+      </span>
+      <button (click)="onDisplaySingleFaceSnap()" class="d-block btn btn-outline-success b">
+        <i class="hoverbi bi bi-eye text-success fw-bolder"></i>
+      </button>
+      <!-- <div class="card-text">
       <span class="d-block card-text">
         Titre : {{ faceSnaps.description | titlecase }}</span
       > -->
-    <!-- <span class="d-block card-text"
+      <!-- <span class="d-block card-text"
         >En ligne depuis: {{ faceSnaps.createdAt | date }}</span
       > -->
-    <!-- <span class="d-block card-text" *ngIf="faceSnaps.location">
+      <!-- <span class="d-block card-text" *ngIf="faceSnaps.location">
         Photo prise : {{ faceSnaps.location }}
       </span> -->
 
-    <!-- <span class="d-block">
+      <!-- <span class="d-block">
         <button (click)="onAddSpan()" class="btn btn-outline-success">
           {{ btnName }}
           <i class="bi bi-person-heart text-danger me-1"></i>
@@ -36,13 +39,14 @@
           {{ faceSnaps.snaps }}</span
         >
       </span> -->
-    <!-- </div> -->
-  </div>
-  <!-- <div class="card-footer">
+      <!-- </div> -->
+    </div>
+    <!-- <div class="card-footer">
     <small class="text-muted"
       >Last updated {{ faceSnaps.createdAt | date : "medium" }} ago</small
     >
   </div> -->
+  </div>
+  <!-- </div> -->
+  <ng-template #nodata>No snaps to display</ng-template>
 </div>
-<!-- </div> -->
-<ng-template #nodata>No snaps to display</ng-template>

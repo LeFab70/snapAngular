@@ -22,5 +22,5 @@ body {
   transition: 0.2s linear;
 }
 .image:hover {
-  transform: rotate(15deg) scale(1, 1) !important;
+  transform: rotate(1deg) scale(1, 1) !important;
 }

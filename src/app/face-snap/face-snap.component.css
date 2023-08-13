@@ -1,16 +1,28 @@
 .snaps {
-  height: 400px;
+  height: 250px;
   width: 100%;
+}
+.flexg {
+  flex: 1 1 150px;
+}
+.b:hover {
+  border: 1px solid rgba(14, 48, 2, 0.198) !important;
+  background-color: rgba(0, 128, 128, 0.692) !important;
+}
+.b:hover > .hoverbi {
+  color: azure !important;
+  font-weight: bolder;
+ 
 }
 @media only screen and (min-width: 600px) {
   .snaps {
-    height: 250px;
+    height: 270px;
     width: 100%;
   }
 }
 @media only screen and (min-width: 900px) {
   .snaps {
-    height: 300px;
+    height: 290px;
     width: 100%;
   }
 }
