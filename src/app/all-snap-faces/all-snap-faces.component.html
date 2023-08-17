@@ -17,15 +17,21 @@
     <i class="bi bi-house-exclamation"></i> Home</a
   >
   >> <span class="active"> Facesnaps</span>
+
+  <!-- <div class="m-3">
+    <button (click)="onCreateSnap()" class="btn btn-outline-dark">
+      <i class="bi bi-plus-circle-fill"></i>
+    </button>
+  </div> -->
 </div>
-<div *ngIf="snaps.length > 0; else nospan">
+<div *ngIf="(snaps$ | async) !== null; else nospan">
   <div class="container">
     <div class="row">
       <!-- <div>
       <input type="text" [(ngModel)]="snapsZise">
     </div> -->
 
-      <div class="col" *ngFor="let snap of snaps">
+      <div class="col" *ngFor="let snap of snaps$ | async">
         <div class="d-flex flex-wrap">
           <app-face-snap [faceSnaps]="snap"></app-face-snap>
         </div>
@@ -33,7 +39,11 @@
     </div>
   </div>
 </div>
-<ng-template #nospan>No snaps to display</ng-template>
+
+<ng-template #nospan>
+  <h1 class="card p-3 mt-3">No todo to display</h1></ng-template
+>
+
 <!-- <div class="card-group" *ngFor="let snap of snaps">
   <app-face-snap [faceSnaps]="snap"></app-face-snap>
 

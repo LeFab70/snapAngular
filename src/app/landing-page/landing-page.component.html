@@ -9,4 +9,45 @@
       <i class="bi bi-eye-fill text-danger fs-5 ms-2"></i>
     </button>
   </div>
+
+  <form
+    (ngSubmit)="onSubmit(newsLetterForm)"
+    #newsLetterForm="ngForm"
+    class="mt-5 text-uppercase row g-2 align-items-center"
+  >
+    <div class="col-auto">
+      <label class="form-label" for="emailInput"
+        >Inscrivez-vous a la mews letter</label
+      >
+    </div>
+    <div class="col-md-5 col-auto">
+      <input
+        name="emailInput"
+        [(ngModel)]="emailInput"
+        aria-describedby="Email"
+        class="col-form-control w-100"
+        type="email"
+        placeholder="votre adresse email"
+        id="emailInput"
+      />
+    </div>
+
+    <div class="col-auto">
+      <label class="form-label" for="nameInput">votre nom</label>
+    </div>
+    <div class="col-md-5 col-auto">
+      <input
+        name="nameInput"
+        [(ngModel)]="nameInput"
+        aria-describedby="text"
+        class="col-form-control w-100"
+        type="text"
+        placeholder="votre nom"
+        id="nameInput"
+      />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-outline-info">s'inscrire</button>
+    </div>
+  </form>
 </div>

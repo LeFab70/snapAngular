@@ -11,9 +11,27 @@ import { HeaderComponent } from './header/header.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateFaceSnapComponent } from './create-face-snap/create-face-snap.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [AppComponent, FaceSnapComponent, AllSnapFacesComponent, HeaderComponent, LandingPageComponent, NotFoundPageComponent, SingleFaceSnapComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    FaceSnapComponent,
+    AllSnapFacesComponent,
+    HeaderComponent,
+    LandingPageComponent,
+    NotFoundPageComponent,
+    SingleFaceSnapComponent,
+    CreateFaceSnapComponent,
+  ],
+  imports: [
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+  ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent],
 })

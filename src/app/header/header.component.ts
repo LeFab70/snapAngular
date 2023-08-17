@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -7,7 +8,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
- // @Input() interval$!: Observable<number>;
+  // @Input() interval$!: Observable<number>;
   menuList = [
     {
       id: 0,
@@ -18,4 +19,8 @@ export class HeaderComponent {
     { id: 1, name: 'Facesnaps', path: 'facesnaps', icone: 'bi-eyeglasses' },
   ];
 
+  constructor(private router: Router) {}
+  onCreateSnap() {
+    this.router.navigateByUrl('/createfacesnap');
+  }
 }

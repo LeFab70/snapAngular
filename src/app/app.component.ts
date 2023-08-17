@@ -18,6 +18,7 @@ import { tap } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent  {
+  //gg=3.3
   // destroy$!: Subject<boolean>;
   // interval$!: Observable<number>;
   // // redTrainsCalled = 0;
